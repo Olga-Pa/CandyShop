@@ -23,6 +23,7 @@ namespace CandyShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -49,7 +50,11 @@ namespace CandyShop
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "Default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+                //endpoints.MapRazorPages();
             });
         }
     }
