@@ -28,7 +28,7 @@ namespace CandyShop.Models
 
         public Candy GetCandyById(int candyId)
         {
-            throw new NotImplementedException();
+            return GetAllCandy.FirstOrDefault(c => c.CandyId == candyId);
         }
     }
    
