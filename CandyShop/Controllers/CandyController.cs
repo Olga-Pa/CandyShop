@@ -19,6 +19,7 @@ namespace CandyShop.Controllers
         }
         public ViewResult List()
         {
+            ViewBag.CurrentCategory = "Bestseller";
             return View(_candyRepository.GetAllCandy);
         }
     }
